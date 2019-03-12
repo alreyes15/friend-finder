@@ -29,7 +29,6 @@ module.exports = function(app) {
             console.log(friendsData[i].name);
             totalDifference = 0;
 
-
             for(var x = 0; x <10; x++) {
                 totalDifference += Math.abs(parseInt(userScores[x]) - parseInt(friendsData[i].scores[x]));
                 
@@ -38,9 +37,9 @@ module.exports = function(app) {
                     bestMatch.name = friendsData[i].name;
                     bestMatch.photo = friendsData[i].photo;
                     bestMatch.friendDifference = totalDifference;
+                    
                 }
             }
-        
         }
         friendsData.push(userData);
         res.json(bestMatch);
